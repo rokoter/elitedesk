@@ -5,4 +5,4 @@ metadata:
   namespace: filebrowser
 spec:
   interval: 12h
-  url: https://charts.bitnami.com/bitnami
+  url: https://utkuozdemir.org/helm-charts
