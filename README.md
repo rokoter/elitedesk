@@ -90,6 +90,28 @@ Each environment has its own:
 
 ---
 
+## 📦 NFS Storage (Helm via Flux)
+
+An NFS dynamic provisioner is installed using Helm, managed through Flux in `infrastructure/`.  
+Directory structure:
+
+```
+infrastructure/
+  ├── base/nfs/
+  │   ├── helmrelease.yaml
+  │   └── helmrepository.yaml
+  └── staging/nfs/
+      └── kustomization.yaml
+```
+
+To disable a test PVC without removing config:
+
+```bash
+kubectl delete pvc test-nfs -n default
+```
+
+---
+
 ## 📌 Requirements
 
 - Ubuntu 24.04 LTS server
@@ -103,6 +125,6 @@ Each environment has its own:
 
 - [x] Ansible provisioning
 - [x] Flux bootstrapped via GitHub
-- [ ] NFS dynamic provisioner
+- [x] NFS dynamic provisioner (Helm via Flux)
 - [ ] Traefik + ACME DNS challenge (TransIP)
 - [ ] Demo app (e.g. Nextcloud)
