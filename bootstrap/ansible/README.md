@@ -7,7 +7,7 @@ The playbook is stored in this repository to ensure full transparency, automatio
 
 1. Updates and upgrades the system
 2. Installs required packages (`curl`, `nfs-common`, etc.)
-3. Installs k3s (without Traefik)
+3. Installs k3s (without Traefik and without Helm controller)
 4. Ensures the NFS client is installed
 5. Fetches the kubeconfig from the server and stores it on your workstation at `~/.kube/elitedesk-k3s.yaml`
 
