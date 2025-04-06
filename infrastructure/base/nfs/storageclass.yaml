@@ -2,7 +2,7 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: nfs-client
-provisioner: nfs.csi.k8s.io
+provisioner: nfs-client
 parameters:
   archiveOnDelete: "true"
 reclaimPolicy: Retain

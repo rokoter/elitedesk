@@ -18,7 +18,7 @@ spec:
           image: k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
           env:
             - name: PROVISIONER_NAME
-              value: nfs.csi.k8s.io
+              value: nfs-client
             - name: NFS_SERVER
               valueFrom:
                 configMapKeyRef:
