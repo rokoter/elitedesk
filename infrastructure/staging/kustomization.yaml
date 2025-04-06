@@ -3,7 +3,8 @@ kind: Kustomization
 
 resources:
   - ../base/nfs-provisioner
-
+  - ../../base/monitoring
+  
 namespace: nfs-provisioner
 
 configMapGenerator:
