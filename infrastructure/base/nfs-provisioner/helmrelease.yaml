@@ -16,7 +16,7 @@ spec:
   values:
     nfs:
       server: 192.168.104.100
-      path: /volume1/surface-k3s
+      path: /volume1/elitedesk-k3s
     storageClass:
       name: nfs-client
       defaultClass: true
