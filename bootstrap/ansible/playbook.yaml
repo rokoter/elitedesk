@@ -1,0 +1,6 @@
+- name: Setup Ubuntu server for k3s
+  hosts: elitedesk
+  become: yes
+  roles:
+    - common
+    - k3s
