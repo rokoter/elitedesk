@@ -4,14 +4,3 @@ kind: Kustomization
 resources:
   - ../base/nfs-provisioner
   - ../base/monitoring
-
-# 👇 namespace wordt hier niet gezet, want je wilt meerdere namespaces gebruiken
-
-configMapGenerator:
-  - name: nfs-config
-    namespace: nfs-provisioner
-    envs:
-      - nfs.env
-
-generatorOptions:
-  disableNameSuffixHash: true
