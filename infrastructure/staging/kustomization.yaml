@@ -9,6 +9,7 @@ configMapGenerator:
   - name: nfs-config
     envs:
       - nfs.env
+    namespace: nfs-provisioner
 
 generatorOptions:
   disableNameSuffixHash: true
