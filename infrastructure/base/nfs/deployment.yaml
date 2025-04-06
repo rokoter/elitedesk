@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: nfs-client-provisioner
+  serviceAccountName: nfs-client-provisioner
   template:
     metadata:
       labels:
