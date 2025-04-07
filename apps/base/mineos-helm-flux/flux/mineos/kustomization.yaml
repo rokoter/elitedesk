@@ -13,6 +13,3 @@ spec:
   targetNamespace: mineos
   timeout: 2m
   wait: true
-resources:
-  - namespace.yaml
-  - helmrelease.yaml

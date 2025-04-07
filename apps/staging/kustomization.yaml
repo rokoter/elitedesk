@@ -5,4 +5,4 @@ resources:
   - test-pvc
   - ../base/filebrowser
   - ../base/portainer
-  - ../base/mineos-helm-flux/flux/mineos
+  - ../base/mineos-helm-flux/flux/mineos/
