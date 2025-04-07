@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mineos
+  namespace: mineos
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./charts/mineos
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+      interval: 1m
+  values:
+    env:
+      MINEOS_UN: mc
+      MINEOS_PW: changeme
+    persistence:
+      size: 5Gi

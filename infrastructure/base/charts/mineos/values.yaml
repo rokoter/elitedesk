@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: hexparrot/mineos
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  ports:
+    web: 8443
+    minecraft: 25565
+
+persistence:
+  enabled: true
+  storageClass: "nfs-client"  # Laat leeg voor default SC
+  accessMode: ReadWriteOnce
+  size: 5Gi
+
+env:
+  MINEOS_UN: mc
+  MINEOS_PW: changeme

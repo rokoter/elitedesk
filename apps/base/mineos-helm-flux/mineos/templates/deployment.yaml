@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mineos.fullname" . }}
+  labels:
+    app: {{ include "mineos.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "mineos.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "mineos.name" . }}
+    spec:
+      containers:
+        - name: mineos
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: web
+              containerPort: 8443
+            - name: minecraft
+              containerPort: 25565
+          env:
+            - name: MINEOS_UN
+              value: "{{ .Values.env.MINEOS_UN }}"
+            - name: MINEOS_PW
+              value: "{{ .Values.env.MINEOS_PW }}"
+          volumeMounts:
+            - name: mineos-data
+              mountPath: /var/games/minecraft
+      volumes:
+        - name: mineos-data
+          persistentVolumeClaim:
+            claimName: mineos-pvc
