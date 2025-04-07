@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./mineos
+  path: ../../mineos
   prune: true
   sourceRef:
     kind: GitRepository
